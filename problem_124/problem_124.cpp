@@ -52,7 +52,6 @@ class Divisor {
 class Number {
 	public:
 		Number(int num) : value(num) {
-			this->value = 1;
 			this->rad = 1;
 			int k = 2;
 			while(true) {
