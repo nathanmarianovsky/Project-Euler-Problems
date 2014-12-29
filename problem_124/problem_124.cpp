@@ -51,7 +51,7 @@ class Divisor {
 //Class to hold the value n, rad(n), and all the divisors of n
 class Number {
 	public:
-		Number(int num) {
+		Number(int num) : value(num) {
 			this->value = 1;
 			this->rad = 1;
 			int k = 2;
@@ -83,7 +83,6 @@ class Number {
 			for(size_t i = 0; i < this->divisors.size(); i++) {
 				this->rad *= this->divisors[i].getBase();
 			}
-			this->value = num;
 		}
 		int getValue() { return this->value; }
 		int getRad() { return this->rad; }
