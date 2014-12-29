@@ -8,13 +8,13 @@ Project Euler Problem #124:
 	1   1 			1    1 	   1
 	2   2 			2    2 	   2
 	3   3 			4    2 	   3
-	4   2 			8	 2 	   4
-	5   5 			3 	 3 	   5
-	6   6			9 	 3 	   6
-	7  	7 			5 	 5 	   7
-	8  	2 			6 	 6 	   8
-	9  	3 			7 	 7 	   9
-	10  10 			10 	 10    10
+	4   2 			8    2 	   4
+	5   5 			3    3 	   5
+	6   6			9    3 	   6
+	7   7 			5    5 	   7
+	8   2 			6    6 	   8
+	9   3 			7    7 	   9
+	10  10 			10   10    10
 
 	Let E(k) be the kth element in the sorted n column; for example, E(4) = 8 and E(6) = 9.
 	If rad(n) is sorted for 1 ≤ n ≤ 100000, find E(10000).
