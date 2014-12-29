@@ -81,9 +81,9 @@ class Number {
 				}
 			}
 			for(size_t i = 0; i < this->divisors.size(); i++) {
-				this->value *= pow(this->divisors[i].getBase(), this->divisors[i].getPower());
 				this->rad *= this->divisors[i].getBase();
 			}
+			this->value = num;
 		}
 		int getValue() { return this->value; }
 		int getRad() { return this->rad; }
