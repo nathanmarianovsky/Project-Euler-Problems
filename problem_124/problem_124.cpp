@@ -99,9 +99,9 @@ This is a comparison operator designed specifically to
 sort the list the way the problems wants it to be organized.
 */
 bool comparison(Number lhs, Number rhs) {
-	if (lhs.getRad() < rhs.getRad()) { return true; }
-	else if (lhs.getRad() == rhs.getRad()) {
-		if (lhs.getValue() < rhs.getValue()) { return true; }
+	if(lhs.getRad() < rhs.getRad()) { return true; }
+	else if(lhs.getRad() == rhs.getRad()) {
+		if(lhs.getValue() < rhs.getValue()) { return true; }
 		else { return false; }
 	}
 	else { return false; }
@@ -110,7 +110,7 @@ bool comparison(Number lhs, Number rhs) {
 
 //Generates the unsorted list
 void generateList(int N, vector<Number> &list) {
-	for (int i = 1; i <= N; i++) {
+	for(int i = 1; i <= N; i++) {
 		Number tmp(i);
 		list.push_back(tmp);
 	}
@@ -126,7 +126,7 @@ void organizeList(vector<Number> &list) {
 //Checks whether or not a given string is an integer or not
 bool is_number(const string &s) {
 	string::const_iterator it = s.begin();
-	while (it != s.end() && isdigit(*it)) {
+	while(it != s.end() && isdigit(*it)) {
 		++it;
 	}
 	return (!s.empty()) && (it == s.end());
@@ -139,7 +139,7 @@ int findN() {
 	string tmp;
 	cout << "This code will find any element produced in the rad(N) sorted list. What would you like the value of N to be?" << endl;
 	cin >> tmp;
-	while (!(is_number(tmp)) || (stoi(tmp) == 0)) {
+	while(!(is_number(tmp)) || (stoi(tmp) == 0)) {
 		cout << "Please choose an integer value such that N > 0!" << endl;
 		tmp = "";
 		cin >> tmp;
@@ -155,7 +155,7 @@ void findElement(vector<Number> list) {
 	string tmp;
 	cout << "What position would you like to access from the sorted list noting the fact that the first position is given by the value 1?" << endl;
 	cin >> tmp;
-	while (!(is_number(tmp))) {
+	while(!(is_number(tmp))) {
 		cout << "Please choose an integer value!" << endl;
 		tmp = "";
 		cin >> tmp;
