@@ -14,7 +14,6 @@ My Solution:
 */
 
 
-
 #include <vector>
 #include <string>
 #include <iostream>
@@ -53,6 +52,7 @@ bool isPentagon(double N) {
 	else { return false; }
 }
 
+
 /*
 First generates a list of Pentagon numbers below N.
 Then checks to see which pairs have it such that they,
@@ -87,7 +87,7 @@ bool comparison(PentagonPair lhs, PentagonPair rhs) {
 void displayPentagonPair(vector<PentagonPair> &list) {
 	sort(list.begin(), list.end(), comparison);
 	cout << "The Pentagon Pair having both their difference and sum be both Pentagon numbers, as well as having the smallest difference are: ";
-	cout << list[0].getNum1() << " and " << list[0].getNum2() << "\n The sum is given as: " << list[0].getSum() << " and the difference: " << list[0].getDifference() << endl;
+	cout << list[0].getNum1() << " and " << list[0].getNum2() << "\nThe sum is given as: " << list[0].getSum() << " and the difference: " << list[0].getDifference() << endl;
 }
 
 
@@ -106,7 +106,7 @@ int findN() {
 	int N = 0;
 	string tmp;
 	cout << "This code will find the pair of numbers such that they, their difference, and their sum are all Pentagon numbers."
-	"In order to this, where would you like for me to cap the Pentagonal sequence?" << endl;
+	"In order to do this, where would you like for me to cap the Pentagon sequence?" << endl;
 	cin >> tmp;
 	while(!(is_number(tmp)) || (stoi(tmp) < 10000000)) {
 		cout << "Please choose an integer value such that N > 10000000!" << endl;

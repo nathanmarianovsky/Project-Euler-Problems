@@ -161,7 +161,7 @@ void findElement(vector<Number> list) {
 		cin >> tmp;
 	}
 	position = stoi(tmp);
-	cout << "The element located at the " << position << "nth position in the sorted list is: " << list[position-1].getValue() << endl;
+	cout << "The element located at the " << position << "th position in the sorted list is: " << list[position-1].getValue() << endl;
 }
 
 

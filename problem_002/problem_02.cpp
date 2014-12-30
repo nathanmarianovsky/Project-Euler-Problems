@@ -18,6 +18,7 @@ My Solution:
 using namespace std;
 
 
+//Class implementation of generating a Fibonacci sequence
 class FibonacciGenerator {
 public:
   FibonacciGenerator() : previous(0), next(1) {}

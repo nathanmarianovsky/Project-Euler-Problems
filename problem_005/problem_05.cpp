@@ -52,7 +52,7 @@ bool is_number(const string &s) {
 int findN() {
 	int N = 0;
 	string tmp;
-	cout << "This code will find the smallest integer such that it is divisible by numbers 1,2,...,N. What would you like the value of N to be?" << endl;
+	cout << "This code will find the smallest integer such that it is divisible by the numbers 1,2,...,N. What would you like the value of N to be?" << endl;
 	cin >> tmp;
 	while(!(is_number(tmp)) || (stoi(tmp) == 0)) {
 		cout << "Please choose an integer value such that N > 0!" << endl;
@@ -71,6 +71,6 @@ int main() {
 	N = findN();
 	addDivisors(divisors, N);
 	value = findValue(divisors);
-	cout << "The smallest integers such that it is divisible by all numbers 1,2,...," << N << " is: " << value << endl;
+	cout << "The smallest integer such that it is divisible by all the numbers 1,2,...," << N << " is: " << value << endl;
 	return 0;
 }

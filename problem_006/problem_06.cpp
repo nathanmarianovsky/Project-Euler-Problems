@@ -16,6 +16,7 @@ My Solution:
 - Nathan Marianovsky
 */
 
+
 #include <iostream>
 #include <cmath>
 #include <string>
@@ -68,6 +69,6 @@ int main() {
 	N = findN();
 	sum_of_squares = find_sum_of_squares(N);
 	square_of_sum = find_square_of_sum(N);
-	cout << "The difference between the square of the sum and the sum of the squares for the first " << N << " natural numbers is:" << abs(sum_of_squares - square_of_sum) << endl;
+	cout << "The difference between the square of the sum and the sum of the squares for the first " << N << " natural numbers is: " << abs(sum_of_squares - square_of_sum) << endl;
 	return 0;
 }
