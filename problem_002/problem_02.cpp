@@ -38,7 +38,7 @@ int findSum(int N) {
 	int sum = 0;
 	FibonacciGenerator chain;
 	for(int i = chain(); i < N; i = chain()) {
-    	if( i % 2 == 0 ) sum += i;
+    		if( i % 2 == 0 ) {sum += i;}
   	}
   	return sum; 
 }
