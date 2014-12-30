@@ -94,7 +94,7 @@ void displayPentagonPair(vector<PentagonPair> &list) {
 //Checks whether or not a given string is an integer or not
 bool is_number(const string &s) {
 	string::const_iterator it = s.begin();
-	while (it != s.end() && isdigit(*it)) {
+	while(it != s.end() && isdigit(*it)) {
 		++it;
 	}
 	return (!s.empty()) && (it == s.end());
@@ -108,7 +108,7 @@ int findN() {
 	cout << "This code will find the pair of numbers such that they, their difference, and their sum are all Pentagon numbers."
 	"In order to this, where would you like for me to cap the Pentagonal sequence?" << endl;
 	cin >> tmp;
-	while (!(is_number(tmp)) || (stoi(tmp) < 10000000)) {
+	while(!(is_number(tmp)) || (stoi(tmp) < 10000000)) {
 		cout << "Please choose an integer value such that N > 10000000!" << endl;
 		tmp = "";
 		cin >> tmp;
