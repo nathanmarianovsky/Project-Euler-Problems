@@ -42,14 +42,12 @@ public:
 	Number(int num) : value(num) {
 		int k = 2;
 		while(true) {
-			if (num == 1) {
-				//Divisor trivial(1, 1);
-				//this->divisors.push_back(trivial);
+			if(num == 1) {
 				break;
 			}
 			if(num % k == 0) {
 				size_t l = 0;
-				for (; l < this->divisors.size(); l++) {
+				for(; l < this->divisors.size(); l++) {
 					if(this->divisors[l].getBase() == k) {
 						this->divisors[l].changePower((this->divisors[l].getPower()) + 1);
 						break;
@@ -77,7 +75,7 @@ private:
 
 //Generates a list of our initial values of N consecutive integers
 void generateList(int distinctPrimes, vector<Number> &list) {
-	for (int i = 1; i <= distinctPrimes; i++) {
+	for(int i = 1; i <= distinctPrimes; i++) {
 		Number tmp(i);
 		list.push_back(tmp);
 	}
@@ -94,7 +92,7 @@ void findIntegers(vector<Number> list) {
 	}
 	if(i == list.size()) {
 		cout << "The consecutive integers which have " << list.size() << " distinct prime factors are:" << endl;
-		for (size_t k = 0; k < list.size(); k++) {
+		for(size_t k = 0; k < list.size(); k++) {
 			cout << list[k].getValue() << endl;
 		}
 	}
@@ -115,7 +113,7 @@ void findIntegers(vector<Number> list) {
 			}
 		}
 		cout << "The consecutive integers which have " << list.size() << " distinct prime factors are:" << endl;
-		for (size_t k = 0; k < list.size(); k++) {
+		for(size_t k = 0; k < list.size(); k++) {
 			cout << list[k].getValue() << endl;
 		}
 	}
@@ -125,7 +123,7 @@ void findIntegers(vector<Number> list) {
 //Checks whether or not a given string is an integer or not
 bool is_number(const string &s) {
 	string::const_iterator it = s.begin();
-	while (it != s.end() && isdigit(*it)) {
+	while(it != s.end() && isdigit(*it)) {
 		++it;
 	}
 	return (!s.empty()) && (it == s.end());
@@ -138,7 +136,7 @@ int findN() {
 	string tmp;
 	cout << "This code will find the list of N consecutive integers such that they all have N distinct prime factors. What would you like the value of N to be?" << endl;
 	cin >> tmp;
-	while (!(is_number(tmp)) || (stoi(tmp) == 0)) {
+	while(!(is_number(tmp)) || (stoi(tmp) == 0)) {
 		cout << "Please choose an integer value such that N > 0!" << endl;
 		tmp = "";
 		cin >> tmp;
