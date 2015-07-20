@@ -1,0 +1,65 @@
+\documentclass[12pt, letterpaper, onecolumn, conference, final]{IEEEtran}
+
+\usepackage[margin = .5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{wasysym}
+\usepackage{graphicx}
+\usepackage{mathtools}
+
+\title{Project Euler: Problem 1}
+\author{Nathan Marianovsky}
+
+\DeclarePairedDelimiter\floor{\Bigg\lfloor}{\Bigg\rfloor}
+
+\theoremstyle{definition}
+\newtheorem*{problem*}{Problem}
+\newtheorem*{solution*}{Solution}
+
+\theoremstyle{plain}
+
+\renewcommand\thesection{\arabic{section}}
+
+\begin{document}
+
+\maketitle
+
+\begin{center}
+\fbox{
+\begin{minipage}{7.3 in}
+\begin{problem*}[Multiples of 3 and 5] 
+If we list all the natural numbers below 10 that are mutliples of 3 or 5, we get 3, 5, 6, and 9. The sum of these multiples is 23. Find the sum of all multiples of 3 or 5 below 1000.
+\end{problem*}
+\end{minipage}}
+\end{center}
+
+\vspace{.3cm}
+\begin{solution*}
+In this problem specifically we want to find the sum below 1000, but this can be generalized to some cap $N$. There are two ways that this problem can be approached. First a list can be made of all the natural numbers below $N$ that follow the requirements where the sum of all the elements corresponds to the solution. The second approach is to find the values of $k_1$ and $k_2$ such that:
+\begin{equation*}
+\begin{split}
+3k_1 &= N \\
+5k_2 &= N
+\end{split}
+\end{equation*}
+where the $k$'s correspond to how high the multiples of 3 and 5 can go before they go above the cap $N$. Their integer solutions are modeled by:
+\begin{equation*}
+\begin{split}
+k_1 &= \floor{\frac{N}{3}} \\
+k_2 &= \floor{\frac{N}{5}}
+\end{split}
+\end{equation*}
+So now instead of taking every natural number starting from 1 and onwards checking whether it fits the requirements, the numbers can be generated into the following list:
+\begin{equation*}
+v = \Big\{3, 6, 9, \dots, 3k_1, 5, 10, 15, \dots, 5k_2\Big\}
+\end{equation*}
+where the generated list should not contain any repetitions of numbers that are divisible by both 3 and 5. So now the solution corresponds to:
+\begin{equation*}
+V = \sum_{i} v_i
+\end{equation*}
+\end{solution*}
+
+
+
+\end{document}
