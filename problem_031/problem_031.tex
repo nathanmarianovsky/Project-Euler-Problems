@@ -52,20 +52,20 @@ In this problem specifically we want $r=200$, but the calculations can be genera
 \hline
 $x_i$ & Generating Function & Simplified Form \\ \hline
 $x_1$ & $g_{x_1}(t) = 1 + t + t^2 + \dots + t^r$ & $g_{x_1}(t) = \frac{1 - t^{r+1}}{1-t}$ \\ \hline
-$x_2$ & $g_{x_2}(t) = 1 + t^2 + t^4 + \dots + t^\frac{r}{2}$ & $g_{x_2}(t) = \frac{1 - t^{2r+2}}{1-t^2}$ \\ \hline
-$x_3$ & $g_{x_3}(t) = 1 + t^5 + t^{10} + \dots + t^\frac{r}{5}$ & $g_{x_3}(t) = \frac{1 - t^{5r+5}}{1-t^5}$ \\ \hline
-$x_4$ & $g_{x_4}(t) = 1 + t^{10} + t^{20} + \dots + t^\frac{r}{10}$ & $g_{x_4}(t) = \frac{1 - t^{10r+10}}{1-t^{10}}$ \\ \hline
-$x_5$ & $g_{x_5}(t) = 1 + t^{20} + t^{40} + \dots + t^\frac{r}{20}$ & $g_{x_5}(t) = \frac{1 - t^{20r+20}}{1-t^{20}}$ \\ \hline
-$x_6$ & $g_{x_6}(t) = 1 + t^{50} + t^{100} + \dots + t^\frac{r}{50}$ & $g_{x_6}(t) = \frac{1 - t^{50r+50}}{1-t^{50}}$ \\ \hline
-$x_7$ & $g_{x_7}(t) = 1 + t^{100} + t^{200} + \dots + t^\frac{r}{100}$ & $g_{x_7}(t) = \frac{1 - t^{100r+100}}{1-t^{100}}$ \\ \hline
-$x_8$ & $g_{x_8}(t) = 1 + t^{200} + t^{400} + \dots + t^\frac{r}{200}$ & $g_{x_8}(t) = \frac{1 - t^{200r+200}}{1-t^{200}}$ \\ \hline
+$x_2$ & $g_{x_2}(t) = 1 + t^2 + t^4 + \dots + t^\frac{r}{2}$ & $g_{x_2}(t) = \frac{1 - t^{r+2}}{1-t^2}$ \\ \hline
+$x_3$ & $g_{x_3}(t) = 1 + t^5 + t^{10} + \dots + t^\frac{r}{5}$ & $g_{x_3}(t) = \frac{1 - t^{r+5}}{1-t^5}$ \\ \hline
+$x_4$ & $g_{x_4}(t) = 1 + t^{10} + t^{20} + \dots + t^\frac{r}{10}$ & $g_{x_4}(t) = \frac{1 - t^{r+10}}{1-t^{10}}$ \\ \hline
+$x_5$ & $g_{x_5}(t) = 1 + t^{20} + t^{40} + \dots + t^\frac{r}{20}$ & $g_{x_5}(t) = \frac{1 - t^{r+20}}{1-t^{20}}$ \\ \hline
+$x_6$ & $g_{x_6}(t) = 1 + t^{50} + t^{100} + \dots + t^\frac{r}{50}$ & $g_{x_6}(t) = \frac{1 - t^{r+50}}{1-t^{50}}$ \\ \hline
+$x_7$ & $g_{x_7}(t) = 1 + t^{100} + t^{200} + \dots + t^\frac{r}{100}$ & $g_{x_7}(t) = \frac{1 - t^{r+100}}{1-t^{100}}$ \\ \hline
+$x_8$ & $g_{x_8}(t) = 1 + t^{200} + t^{400} + \dots + t^\frac{r}{200}$ & $g_{x_8}(t) = \frac{1 - t^{r+200}}{1-t^{200}}$ \\ \hline
 \end{tabular}
 \end{center}
 Giving an overall generating function:
 \begin{equation*}
 \begin{split}
 g(t) &= g_{x_1}(t)g_{x_2}(t)\dots g_{x_8}(t) \\
-&= \frac{(1-t^{r+1})(1-t^{2r+2})(1-t^{5r+5})(1-t^{10r+10})(1-t^{20r+20})(1-t^{50r+50})(1-t^{100r+100})(1-t^{200r+200})}{(1-t)(1-t^2)(1-t^5)(1-t^{10})(1-t^{20})(1-t^{50})(1-t^{100})(1-t^{200})}
+&= \frac{(1-t^{r+1})(1-t^{r+2})(1-t^{r+5})(1-t^{r+10})(1-t^{r+20})(1-t^{r+50})(1-t^{r+100})(1-t^{r+200})}{(1-t)(1-t^2)(1-t^5)(1-t^{10})(1-t^{20})(1-t^{50})(1-t^{100})(1-t^{200})}
 \end{split}
 \end{equation*}
 The solution to the problem now corresponds to finding the coefficient of $t^r$ in the power series expansion of the above generating function. For this problem specifically we want the coefficient of $t^{200}$ which happens to be 73,682 when calculated using Mathematica and can actually be found faster by replacing the numerator with just 1 since the lowest degree of $t$ after 0 is going to be exactly 201 making it all extra junk.
