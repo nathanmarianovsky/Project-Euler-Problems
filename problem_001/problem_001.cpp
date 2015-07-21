@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 #include <cmath>
 #include <string>
 using namespace std;
@@ -58,7 +57,6 @@ void printSum(int N, int sum) {
 int main() {
 	int N = 0;
 	int sum = 0;
-	vector<int> array;
 	N = findN();
 	sum = findSum(N);
 	printSum(N, sum);

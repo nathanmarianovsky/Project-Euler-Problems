@@ -1,0 +1,56 @@
+\documentclass[12pt, letterpaper, onecolumn, conference, final]{IEEEtran}
+
+\usepackage[margin = .5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{wasysym}
+\usepackage{graphicx}
+\usepackage{mathtools}
+
+\title{Project Euler: Problem 5}
+\author{Nathan Marianovsky}
+
+\newcommand{\Mod}[1]{\ (\text{mod}\ #1)}
+
+\theoremstyle{definition}
+\newtheorem*{problem*}{Problem}
+\newtheorem*{solution*}{Solution}
+
+\theoremstyle{plain}
+
+\renewcommand\thesection{\arabic{section}}
+
+\begin{document}
+
+\maketitle
+
+\begin{center}
+\fbox{
+\begin{minipage}{7.3 in}
+\begin{problem*}[Smallest Multiple] 
+2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder. What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+\end{problem*}
+\end{minipage}}
+\end{center}
+
+\vspace{.3cm}
+\begin{solution*}
+This problem deals with finding the least common multiple of a list of $N$ positive integers. So lets assume that there is a list of these divisors:
+\begin{equation*}
+d = \{d_1,d_2,\dots,d_N\} \hspace{.3cm} \text{where} \hspace{.3cm} n \in \{2,3,4,\dots\}
+\end{equation*}
+For this question the list consists of the first 20 positive integers. Now to compute the LCM$(m,n)$, least common multiple, use:
+\begin{equation*}
+\text{LCM}(m,n) = \frac{mn}{\text{GCD}(m,n)}
+\end{equation*}
+where GCD$(m,n)$ is the greatest common divisor. This can be generalized to a recursive relation:
+\begin{equation*}
+\text{LCM}(d_N,d_{N-1},d_{N-2}) = \text{LCM}(d_{N-1},d_{N-2}) \frac{d_N}{\text{GCD}(\text{LCM}(d_{N-1},d_{N-2}),d_N)}
+\end{equation*}
+Iterating through all of the divisors in question using the above recursive relationship will obtain LCD$(d_1,d_2,\dots,d_N)$.
+\end{solution*}
+
+
+
+\end{document}
