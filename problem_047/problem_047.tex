@@ -1,0 +1,63 @@
+\documentclass[12pt, letterpaper, onecolumn, conference, final]{IEEEtran}
+
+\usepackage[margin = .5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{wasysym}
+\usepackage{graphicx}
+\usepackage{mathtools}
+
+\title{Project Euler: Problem 47}
+\author{Nathan Marianovsky}
+
+\newcommand{\Mod}[1]{\ (\text{mod}\ #1)}
+
+\theoremstyle{definition}
+\newtheorem*{problem*}{Problem}
+\newtheorem*{solution*}{Solution}
+
+\theoremstyle{plain}
+
+\renewcommand\thesection{\arabic{section}}
+
+\begin{document}
+
+\maketitle
+
+\begin{center}
+\fbox{
+\begin{minipage}{7.3 in}
+\begin{problem*}[Distinct Primes Factors] 
+The first two consecutive numbers to have two distinct prime factors are:
+\begin{equation*}
+\begin{split}
+14 &= 2 \times 7 \\
+15 &= 3 \times 5
+\end{split}
+\end{equation*}
+The first three consectuive numbers to have three distinct prime factors are:
+\begin{equation*}
+\begin{split}
+644 &= 2^2 \times 7 \times 23 \\
+645 &= 3 \times 5 \times 43 \\
+646 &= 2 \times 17 \times 19
+\end{split}
+\end{equation*}
+Find the first four consecutive integers to have four distinct prime factors. What is the first of these numbers?
+\end{problem*}
+\end{minipage}}
+\end{center}
+
+\vspace{.3cm}
+\begin{solution*}
+The basic approach is to take consecutive integers and break them down into their prime factorization:
+\begin{equation*}
+a = p_1^{m_1} p_2^{m_2} \dots p_k^{m_k}
+\end{equation*}
+and count the number of distinct primes. Lets say to generalize that you want to find the first set of $k$ integers that have $k$ distinct prime factors, you check the current $k$ integers to see if they all meet the requirement, if not, move each one over by one and check again. Repeat the checking process until a result has popped up.
+\end{solution*}
+
+
+
+\end{document}

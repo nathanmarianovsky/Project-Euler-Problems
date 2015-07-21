@@ -1,22 +1,3 @@
-/*
-Project Euler Problem #47:
-	The first two consecutive numbers to have two distinct prime factors are:
-			14 = 2 × 7
-			15 = 3 × 5
-	The first three consecutive numbers to have three distinct prime factors are:
-			644 = 2² × 7 × 23
-			645 = 3 × 5 × 43
-			646 = 2 × 17 × 19.
-	Find the first four consecutive integers to have four distinct prime factors. What is the first of these numbers?
-
-My Solution:
-	I extended this problem to a more general approach. The code below will find the first N consecutive integers such
-	that they all have N distinct prime factors.
-
-- Nathan Marianvosky
-*/
-
-
 #include <vector>
 #include <iostream>
 #include <string>
@@ -36,7 +17,7 @@ private:
 };
 
 
-//Class to hold the value n, rad(n), and all the divisors of n
+//Class to hold the value n and all the divisors of n
 class Number {
 public:
 	Number(int num) : value(num) {
