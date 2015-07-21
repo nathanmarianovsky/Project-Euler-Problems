@@ -1,15 +1,3 @@
-/*
-Project Euler Problem #7:
-	By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
-	What is the 10001st prime number?
-
-My Solution:
-	I extended this problem to a more general approach. The code below will find the Nth prime number.
-
-- Nathan Marianvosky
-*/
-
-
 #include <vector>
 #include <iostream>
 #include <string>
@@ -29,7 +17,7 @@ private:
 };
 
 
-//Class to hold the value n, rad(n), and all the divisors of n
+//Class to hold the value n and all the divisors of n
 class Number {
 public:
 	Number(int num) : value(num) {

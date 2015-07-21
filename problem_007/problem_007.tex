@@ -1,0 +1,48 @@
+\documentclass[12pt, letterpaper, onecolumn, conference, final]{IEEEtran}
+
+\usepackage[margin = .5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{wasysym}
+\usepackage{graphicx}
+\usepackage{mathtools}
+
+\title{Project Euler: Problem 7}
+\author{Nathan Marianovsky}
+
+\newcommand{\Mod}[1]{\ (\text{mod}\ #1)}
+
+\theoremstyle{definition}
+\newtheorem*{problem*}{Problem}
+\newtheorem*{solution*}{Solution}
+
+\theoremstyle{plain}
+
+\renewcommand\thesection{\arabic{section}}
+
+\begin{document}
+
+\maketitle
+
+\begin{center}
+\fbox{
+\begin{minipage}{7.3 in}
+\begin{problem*}[10001st Prime] 
+By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13. What is the 10001st prime number?
+\end{problem*}
+\end{minipage}}
+\end{center}
+
+\vspace{.3cm}
+\begin{solution*}
+The basic approach to this problem is to generate the prime numbers and get the position we want. Since there is no closed form for the primes, this must be done by brute force. Start at $n=2$ and break down each $n$ into its prime factorization:
+\begin{equation*}
+n = p_1^{m_1} p_2^{m_2} \dots p_k^{m_k}
+\end{equation*}
+Now if the only distinct prime factors of $n$ are 1 and itself, the number is a prime. Add it to the list of primes and keep generating until the desired position is attained.
+\end{solution*}
+
+
+
+\end{document}
