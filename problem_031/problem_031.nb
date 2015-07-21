@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      2451,         85]
-NotebookOptionsPosition[      2110,         69]
-NotebookOutlinePosition[      2462,         85]
-CellTagsIndexPosition[      2419,         82]
+NotebookDataLength[      2000,         74]
+NotebookOptionsPosition[      1751,         60]
+NotebookOutlinePosition[      2103,         76]
+CellTagsIndexPosition[      2060,         73]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -56,16 +56,7 @@ Cell[BoxData[
            RowBox[{"(", "200", ")"}]}]}], ")"}]}], ")"}]}], ",", 
      RowBox[{"{", 
       RowBox[{"t", ",", "0", ",", "200"}], "}"}]}], "]"}], ",", "t", ",", 
-   "200"}], "]"}]], "Input",
- CellChangeTimes->{{3.646368171584724*^9, 3.646368189625257*^9}, {
-  3.646368249846621*^9, 3.6463684258364067`*^9}, {3.6463685622865067`*^9, 
-  3.646368623851594*^9}}],
-
-Cell[BoxData[""], "Input",
- CellChangeTimes->{{3.646368691193465*^9, 3.6463686912074537`*^9}}],
-
-Cell[BoxData[""], "Input",
- CellChangeTimes->{{3.64636868426978*^9, 3.646368684275559*^9}}]
+   "200"}], "]"}]], "Input"]
 },
 WindowSize->{808, 755},
 WindowMargins->{{4, Automatic}, {Automatic, 4}},
@@ -84,11 +75,10 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 1357, 41, 80, "Input"],
-Cell[1918, 63, 94, 1, 28, InheritFromParent],
-Cell[2015, 66, 91, 1, 28, InheritFromParent]
+Cell[558, 20, 1189, 38, 80, "Input"]
 }
 ]
 *)
 
 (* End of internal cache information *)
+
