@@ -1,0 +1,48 @@
+\documentclass[12pt, letterpaper, onecolumn, conference, final]{IEEEtran}
+
+\usepackage[margin = .5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{wasysym}
+\usepackage{graphicx}
+\usepackage{mathtools}
+
+\title{Project Euler: Problem 3}
+\author{Nathan Marianovsky}
+
+\DeclarePairedDelimiter\floor{\Bigg\lfloor}{\Bigg\rfloor}
+
+\theoremstyle{definition}
+\newtheorem*{problem*}{Problem}
+\newtheorem*{solution*}{Solution}
+
+\theoremstyle{plain}
+
+\renewcommand\thesection{\arabic{section}}
+
+\begin{document}
+
+\maketitle
+
+\begin{center}
+\fbox{
+\begin{minipage}{7.3 in}
+\begin{problem*}[Largest Prime Factor] 
+The prime factors of 13195 are 5, 7, 13, and 29. What is the largest prime factor of the number 600851475143?
+\end{problem*}
+\end{minipage}}
+\end{center}
+
+\vspace{.3cm}
+\begin{solution*}
+The problem merely deals with taking any given integer $N$ and breaking it down into its prime factorization:
+\begin{equation*}
+N = p_1^{m_1} p_2^{m_2} \dots p_k^{m_k}
+\end{equation*}
+where the solution corresponds to $\max(p_1, p_2, \dots, p_k)$.
+\end{solution*}
+
+
+
+\end{document}
