@@ -1,0 +1,62 @@
+\documentclass[12pt, letterpaper, onecolumn, conference, final]{IEEEtran}
+
+\usepackage[margin = .5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{wasysym}
+\usepackage{graphicx}
+\usepackage{mathtools}
+
+\title{Project Euler: Problem 6}
+\author{Nathan Marianovsky}
+
+\newcommand{\Mod}[1]{\ (\text{mod}\ #1)}
+
+\theoremstyle{definition}
+\newtheorem*{problem*}{Problem}
+\newtheorem*{solution*}{Solution}
+
+\theoremstyle{plain}
+
+\renewcommand\thesection{\arabic{section}}
+
+\begin{document}
+
+\maketitle
+
+\begin{center}
+\fbox{
+\begin{minipage}{7.3 in}
+\begin{problem*}[Sum Square Difference] 
+The sum of the squares of the first ten natural numbers is,
+\begin{equation*}
+1^2 + 2^2 + \dots + 10^2 = 385
+\end{equation*}
+The square of the sum of the first ten natural numbers is,
+\begin{equation*}
+(1 + 2 + \dots + 10)^2 = 3025
+\end{equation*}
+Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025 - 385 = 2640. Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
+\end{problem*}
+\end{minipage}}
+\end{center}
+
+\vspace{.3cm}
+\begin{solution*}
+To approach this problem, the following two formulas are needed to make life easier:
+\begin{equation*}
+\begin{split}
+\sum_{i=1}^n i &= \frac{n(n+1)}{2} \\
+\sum_{i=1}^n i^2 &= \frac{n(n+1)(2n+1)}{6}
+\end{split}
+\end{equation*}
+where the first equation represents the sum of the first $n$ natural numbers and the second the sum of the squares of the first $n$ natural numbers. This allows for a generalization of $n$ terms, even though this problem specifically wants $n=100$. Using this the difference between the square of the sum and the sum of the squares of the first $n$ natural numbers is:
+\begin{equation*}
+D = \Big( \sum_{i=1}^n i \Big)^2 - \sum_{i=1}^n i^2 = \Big( \frac{n(n+1)}{2} \Big)^2 - \frac{n(n+1)(2n+1)}{6} = \frac{n^4}{4} + \frac{n^3}{6} - \frac{n^2}{4} - \frac{n}{6}
+\end{equation*}
+\end{solution*}
+
+
+
+\end{document}

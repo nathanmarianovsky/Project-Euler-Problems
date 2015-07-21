@@ -24,12 +24,14 @@ int GCD(int a, int b) {
     else {return rem;}
 }   			
 
+
 //Adds the divisors 1,2,...,N to a divisors vector
 void addDivisors(vector<int> &divisors, int N) {
 	for(int i = 1; i <= N; i++) {
 		divisors.push_back(i);
 	}
 }
+
 
 //Finds the lowest common multiple of all the divisors
 int LCM(vector<int> divisors) {
@@ -39,6 +41,7 @@ int LCM(vector<int> divisors) {
 	}
 	return lcm;
 }
+
 
 //Checks whether or not a given string is an integer or not
 bool is_number(const string &s) {
