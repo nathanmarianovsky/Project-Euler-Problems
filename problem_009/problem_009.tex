@@ -1,0 +1,73 @@
+\documentclass[12pt, letterpaper, onecolumn, conference, final]{IEEEtran}
+
+\usepackage[margin = .5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{wasysym}
+\usepackage{graphicx}
+\usepackage{mathtools}
+
+\title{Project Euler: Problem 9}
+\author{Nathan Marianovsky}
+
+\newcommand{\Mod}[1]{\ (\text{mod}\ #1)}
+
+\theoremstyle{definition}
+\newtheorem*{problem*}{Problem}
+\newtheorem*{solution*}{Solution}
+
+\theoremstyle{plain}
+
+\renewcommand\thesection{\arabic{section}}
+
+\begin{document}
+
+\maketitle
+
+\begin{center}
+\fbox{
+\begin{minipage}{7.3 in}
+\begin{problem*}[Special Pythagorean Triplet] 
+A Pythagorean triplet is a set of three natural numbers, $a < b < c$, for which,
+\begin{equation*}
+a^2 + b^2 = c^2
+\end{equation*}
+For example, $3^2 + 4^2 = 9 + 16 = 25 = 5^2$. There exists exactly one Pythagorean triplet for which $a + b + c = 1000$. Find the product $abc$.
+\end{problem*}
+\end{minipage}}
+\end{center}
+
+\vspace{.3cm}
+\begin{solution*}
+To generalize assume that the condition the Pythagorean triplets have to satisfy is of the form $a + b + c = N$. Due to this there may exist more than one triplet, so the algorithm will have to be able to keep searching. Now given any Pythagorean triplet, it can be rewritten as:
+\begin{equation*}
+\begin{split}
+a &= m^2 - n^2 \\
+b &= 2mn \\
+c &= m^2 + n^2
+\end{split}
+\end{equation*}
+where $m,n \in \mathbb{N}$. These substitutions can be easily checked by plugging into the definition above. Now to use this, plug it into the given condition:
+\begin{equation*}
+\begin{split}
+a + b + c &= N \\
+m^2 - n^2 + 2mn + m^2 + n^2 &= N \\
+2m^2 + 2mn &= N \\
+m^2 + nm - \frac{N}{2} &= 0
+\end{split}
+\end{equation*}
+Using the quadratic formula on $m$ gives:
+\begin{equation*}
+m = \frac{1}{2} \Big( -n \pm \sqrt{n^2 + 2N} \Big)
+\end{equation*}
+Since $n$ and $m$ have to both be positive integers, the negative radical can be abandoned to give:
+\begin{equation*}
+m = \frac{1}{2} \Big( -n + \sqrt{n^2 + 2N} \Big)
+\end{equation*}
+With this everything is ready. Take $n$ and keep iterating through the natural numbers to generate $m$ and as a result a candidate Pythagorean triplet based on $a$, $b$, and $c$. Once it is checked that the solution is a triplet, check to see if it satisfies the given condition. 
+\end{solution*}
+
+
+
+\end{document}
