@@ -1,0 +1,64 @@
+\documentclass[12pt, letterpaper, onecolumn, conference, final]{IEEEtran}
+
+\usepackage[margin = .5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{wasysym}
+\usepackage{graphicx}
+\usepackage{mathtools}
+
+\title{Project Euler: Problem 42}
+\author{Nathan Marianovsky}
+
+\DeclarePairedDelimiter\floor{\Bigg\lfloor}{\Bigg\rfloor}
+
+\theoremstyle{definition}
+\newtheorem*{problem*}{Problem}
+\newtheorem*{solution*}{Solution}
+
+\theoremstyle{plain}
+
+\renewcommand\thesection{\arabic{section}}
+
+\begin{document}
+
+\maketitle
+
+\begin{center}
+\fbox{
+\begin{minipage}{7.3 in}
+\begin{problem*}[Coded Triangle Numbers] 
+The $n^\text{th}$ term of the sequence of triangle numbers is given by, $t_n = \frac{n(n+1)}{2}$; so the first ten triangle numbers are:
+\begin{equation*}
+1, 3, 6, 10, 15, 21, 28, 36, 45, 55, \dots
+\end{equation*}
+By converting each letter in a word to a number corresponding to its alphabetical position and adding these values we form a word value. For example, the word value for SKY is 19 + 11 + 25 = 55 = $t_{10}$. If the word value is a triangle number then we shall call the word a triangle word. Using \textit{words.txt}, a 16K text file containing nearly two-thousand common English word, how many are triangle words?
+\end{problem*}
+\end{minipage}}
+\end{center}
+
+\vspace{.3cm}
+\begin{solution*}
+This problem overall mainly deals with opening the file and extracting the words and then computing the numerical value of each word. Once the value is obtainted we need a way to tell whether a number is a triangle number or not. To do this observe:
+\begin{equation*}
+\begin{split}
+t_n &= \frac{n(n+1)}{2} \\
+t_n &= \frac{1}{2}n^2 + \frac{1}{2}n \\
+0 &= n^2 + n - 2t_n
+\end{split}
+\end{equation*}
+Using the quadratic formula on $n$ gives:
+\begin{equation*}
+n = \frac{-1 \pm \sqrt{1 + 8t_n}}{2}
+\end{equation*}
+where the negative radical can be dropped since $n$ is strictly positive:
+\begin{equation*}
+n = \frac{-1 + \sqrt{1 + 8t_n}}{2}
+\end{equation*}
+Using the above formula given any number $t_n$, determine $n$ and if it is an integer, then the number is a triangle number.
+\end{solution*}
+
+
+
+\end{document}
