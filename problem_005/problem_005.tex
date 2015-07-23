@@ -36,19 +36,19 @@
 
 \vspace{.3cm}
 \begin{solution*}
-This problem deals with finding the least common multiple of a list of $N$ positive integers. So lets assume that there is a list of these divisors:
+On a general scale this problem deals with finding the least common multiple of a list of $N$ positive integers, specifically the first 20 positive integers is of interest to us. So lets assume that there is a list of these divisors:
 \begin{equation*}
 d = \{d_1,d_2,\dots,d_N\} \hspace{.3cm} \text{where} \hspace{.3cm} N \in \{2,3,4,\dots\}
 \end{equation*}
-For this question the list consists of the first 20 positive integers. Now to compute the LCM$(m,n)$, least common multiple, use:
+Now to compute the LCM$(m,n)$, least common multiple, use:
 \begin{equation*}
 \text{LCM}(m,n) = \frac{mn}{\text{GCD}(m,n)}
 \end{equation*}
-where GCD$(m,n)$ is the greatest common divisor. This can be generalized to a recursive relation:
+where GCD$(m,n)$ is the greatest common divisor. With this a recursive relationship for finding the least common multiple of 3 factors is defined as:
 \begin{equation*}
 \text{LCM}(d_N,d_{N-1},d_{N-2}) = \text{LCM}(d_{N-1},d_{N-2}) \frac{d_N}{\text{GCD}(\text{LCM}(d_{N-1},d_{N-2}),d_N)}
 \end{equation*}
-Iterating through all of the divisors in question using the above recursive relationship will obtain LCD$(d_1,d_2,\dots,d_N)$.
+With this, iterate through all of the divisors in question using the above recursive relationship will obtain LCD$(d_1,d_2,\dots,d_N)$.
 \end{solution*}
 
 
