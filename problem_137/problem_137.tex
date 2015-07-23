@@ -1,0 +1,101 @@
+\documentclass[12pt, letterpaper, onecolumn, conference, final]{IEEEtran}
+
+\usepackage[margin = .5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{wasysym}
+\usepackage{graphicx}
+\usepackage{mathtools}
+
+\title{Project Euler: Problem 137}
+\author{Nathan Marianovsky}
+
+\newcommand{\BigO}[1]{\ensuremath{\operatorname{O}\bigl(#1\bigr)}}
+
+\theoremstyle{definition}
+\newtheorem*{problem*}{Problem}
+\newtheorem*{solution*}{Solution}
+
+\theoremstyle{plain}
+
+\renewcommand\thesection{\arabic{section}}
+
+\begin{document}
+
+\maketitle
+
+\begin{center}
+\fbox{
+\begin{minipage}{7.3 in}
+\begin{problem*}[Fibonacci Golden Nuggets] 
+Consider the infinite polynomial series $A_F(x) = xF_1 + x^2F_2 + x^3F_3 + \dots$, where $F_k$ is the $k$th term in the Fibonacci sequence: $1, 1, 2, 3, 5, 8, \dots$; that is, $F_k = F_{k-1} + F_{k-2}$, $F_1 = 1$ and $F_2 = 1$. For this problem we shall be interested in values of $x$ for which $A_F(x)$ is a positive integer. Surprisingly
+\begin{equation*}
+\begin{split}
+A_F\Big( \frac{1}{2} \Big) &= \frac{1}{2} \times 1 + \Big( \frac{1}{2} \Big)^2 \times 1 + \Big( \frac{1}{2} \Big)^3 \times 2 + \Big( \frac{1}{2} \Big)^4 \times 3 + \Big( \frac{1}{2} \Big)^5 \times 5 + \dots \\
+&= \frac{1}{2} + \frac{1}{4} + \frac{2}{8} + \frac{3}{16} + \frac{5}{32} + \dots \\
+&= 2
+\end{split}
+\end{equation*}
+The corresponding values of $x$ for the first five natural numbers are shown below:
+\begin{center}
+\def\arraystretch{1.5}
+\begin{tabular}{| c | c |}
+\hline
+$x$ & $A_F(x)$ \\ \hline
+$\sqrt{2} - 1$ & 1 \\ \hline
+$\frac{1}{2}$ & 2 \\ \hline
+$\frac{\sqrt{13} - 2}{3}$ & 3 \\ \hline
+$\frac{\sqrt{89} - 5}{8}$ & 4 \\ \hline
+$\frac{\sqrt{34} - 3}{5}$ & 5 \\ \hline
+\end{tabular}
+\end{center}
+We shall call $A_F(x)$ a golden nugget if $x$ is rational, because they become increasingly rarer; for example, the 10th golden nugget is 74049690. Find the 15th golden nugget.
+\end{problem*}
+\end{minipage}}
+\end{center}
+
+\vspace{.3cm}
+\begin{solution*}
+To begin with consider the definition of $A_F(x)$:
+\begin{equation*}
+A_F(x) = xF_1 + x^2F_2 + x^3F_3 + \dots = \sum_{n=1}^\infty x^iF_i
+\end{equation*}
+where $F_i$ is the Fibonacci sequence. In other words, this is the generating function for the Fibonacci sequence that has a known closed form:
+\begin{equation*}
+A_F(x) = \frac{x}{1 - x - x^2}
+\end{equation*}
+For this problem specifically we want $A_F(x) = n$ where $n \in \mathbb{N}$. Using this:
+\begin{equation*}
+\begin{split}
+n &= \frac{x}{1 - x - x^2} \\
+-nx^2 - nx + n &= x \\
+nx^2 + (n + 1)x - n &= 0
+\end{split}
+\end{equation*}
+Now using the quadratic formula on $x$ gives:
+\begin{equation*}
+x = \frac{-1 - n \pm \sqrt{1 + 2n + 5n^2}}{2n}
+\end{equation*}
+where the negative radical can be dropped because we are looking at the positive $x$:
+\begin{equation*}
+x = \frac{-1 - n + \sqrt{1 + 2n + 5n^2}}{2n}
+\end{equation*}
+Since we are looking for $A_F(x)$ where $x$ is rational:
+\begin{equation*}
+\sqrt{1 + 2n + 5n^2} \in \mathbb{Z}^+
+\end{equation*}
+Now we have a way of generating $x$'s by iterating through the natural numbers $n$'s and check if they are rational. For the first ten numbers the sequence takes on the form:
+\begin{equation*}
+s = \{2, 15, 104, 714, 4895, 33552, 229970, 1576239, 10803704, 74049690, \dots\}
+\end{equation*}
+At this point there is already a method of attaining the solution, the only issue being that it takes time iterating through the natural numbers seeing how the golden nuggets become increasingly rarer as we go on. So after observing the sequence a bit, a pattern become apparent:
+\begin{equation*}
+s_n = F_{2n}F_{2n+1}
+\end{equation*}
+where $F_k$ is the kth term in the Fibonacci sequence. Thus the solution to this problem is $s_{15} = F_{30}F_{31}$, though the definition above can generate any golden nugget.
+\end{solution*}
+
+
+
+\end{document}
