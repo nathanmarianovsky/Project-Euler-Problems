@@ -1,0 +1,58 @@
+\documentclass[12pt, letterpaper, onecolumn, conference, final]{IEEEtran}
+
+\usepackage[margin = .5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{wasysym}
+\usepackage{graphicx}
+\usepackage{mathtools}
+
+\title{Project Euler: Problem 14}
+\author{Nathan Marianovsky}
+
+\DeclarePairedDelimiter\floor{\Bigg\lfloor}{\Bigg\rfloor}
+
+\theoremstyle{definition}
+\newtheorem*{problem*}{Problem}
+\newtheorem*{solution*}{Solution}
+
+\theoremstyle{plain}
+
+\renewcommand\thesection{\arabic{section}}
+
+\begin{document}
+
+\maketitle
+
+\begin{center}
+\fbox{
+\begin{minipage}{7.3 in}
+\begin{problem*}[Longest Collatz Sequence] 
+The following iterative sequence is defined for the set of positive integers:
+\begin{equation*}
+\begin{split}
+n &\rightarrow \frac{n}{2} \hspace{.3cm} (n\text{ is even}) \\
+n &\rightarrow 3n + 1 \hspace{.3cm} (n\text{ is odd}) 
+\end{split}
+\end{equation*}
+Using the rule above and starting with 13, we generate the following sequence:
+\begin{equation*}
+13 \rightarrow 40 \rightarrow 20 \rightarrow 10 \rightarrow 5 \rightarrow 16 \rightarrow 8 \rightarrow 4 \rightarrow 2 \rightarrow 1
+\end{equation*}
+It can be seen tht this sequence (starting at 13 and finishing at 1) contains 10 terms. Although it has not been proved yet (Collatz Problem), it is thought that all starting numbers finish at 1. Which starting number, under one million, produces the longest chain?
+\vspace{.3cm}
+\newline
+\textbf{NOTE:} Once the chain stars the terms are allowed to go above one million.
+\end{problem*}
+\end{minipage}}
+\end{center}
+
+\vspace{.3cm}
+\begin{solution*}
+To generalize consider finding the value that produces the longest chain under $N$ instead of one million. This is a simple matter of taking each natural number, applying the given formula to find the chain length, and finding which value has the longest chain.
+\end{solution*}
+
+
+
+\end{document}
