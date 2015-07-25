@@ -86,8 +86,3 @@ int main() {
 	cout << "The number " << list[position].get_value() << " produces a Collatz chain of length " << list[position].get_chain() << " which is the biggest chain produced for all values below " << N << endl; 
 	return 0;
 }
-
-
-
-
-
