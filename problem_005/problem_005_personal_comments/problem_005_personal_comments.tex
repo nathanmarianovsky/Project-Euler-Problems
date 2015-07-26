@@ -1,0 +1,82 @@
+\documentclass[12pt, letterpaper, onecolumn, conference, final]{IEEEtran}
+
+\usepackage[margin = .5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{wasysym}
+\usepackage{graphicx}
+\usepackage{mathtools}
+
+\title{Project Euler: Problem 5 Personal Comments}
+\author{Nathan Marianovsky}
+
+\newcommand{\Mod}[1]{\ (\text{mod}\ #1)}
+
+\theoremstyle{definition}
+\newtheorem*{problem*}{Problem}
+\newtheorem*{solution*}{Solution}
+
+\theoremstyle{plain}
+
+\renewcommand\thesection{\arabic{section}}
+
+\begin{document}
+
+\maketitle
+
+\section*{\underline{\Large{GCD and LCD}}}
+\vspace{.3cm}
+\noindent
+In this problem we use the GCD, greatest common divisor, and LCM, least common multiple, as tools to attain the solution. Now given any two numbers we can define a unique factorization for each number as \footnotemark :
+\begin{equation*}
+\begin{split}
+x &= p_1^{m_1} p_2^{m_2} \dots p_n^{m_n} \\
+y &= p_1^{k_1} p_2^{k_2} \dots p_l^{k_l}
+\end{split}
+\end{equation*}
+where the decompositions consist of factors that are the same with different powers. One decomposition may have more $p$'s, though it honestly does not matter and so for this case lets assume that $l \leq n$. These two numbers can also have no prime divisors in common making them \textit{coprime}. That case is trivial so lets consider the case where there are at least some common prime divisors. To motivate the definition of the GCD consider the following the examples:
+\begin{equation*}
+\begin{split}
+21 = 1 \times 3 \times 7 \hspace{.3cm} \text{and} \hspace{.3cm} 35 = 1 \times 5 \times 7 &\implies \text{GCD}(21, 35) = 1 \times 7 \\
+24 = 1 \times 2^3 \times 3 \hspace{.3cm} \text{and} \hspace{.3cm} 66 = 1 \times 2^5 \times 3 &\implies \text{GCD}(24, 32) = 1 \times 2^3 \times 3
+\end{split}
+\end{equation*}
+In both cases we take the minimum power of each divisor and multiply them together. So to generalize:
+\begin{equation*}
+\text{GCD}(x,y) = p_1^{\min(m_1,k_1)} p_2^{\min(m_2,k_2)} \dots p_n^{\min(m_n,k_n)} = \prod_{i=1}^n p_i^{\min(m_i,k_i)}
+\end{equation*}
+Now lets motivate the definition of the least common multiple with the following examples:
+\begin{equation*}
+\begin{split}
+21 = 1 \times 3 \times 7 \hspace{.3cm} \text{and} \hspace{.3cm} 35 = 1 \times 5 \times 7 &\implies \text{LCM}(21, 35) = 1 \times 3 \times 5 \times 7 \\
+24 = 1 \times 2^3 \times 3 \hspace{.3cm} \text{and} \hspace{.3cm} 66 = 1 \times 2^5 \times 3 &\implies \text{LCM}(24, 32) = 1 \times 2^5 \times 3
+\end{split}
+\end{equation*}
+In both cases we take the maximum power of each divisor and multiply them together. So to generalize:
+\begin{equation*}
+\text{LCM}(x,y) = p_1^{\max(m_1,k_1)} p_2^{\max(m_2,k_2)} \dots p_n^{\max(m_n,k_n)} = \prod_{i=1}^n p_i^{\max(m_i,k_i)}
+\end{equation*}
+With both of these tools defined, consider the following:
+\begin{equation*}
+\begin{split}
+\text{GCD}(x,y) \text{LCM}(x,y) &= \prod_{i=1}^n p_i^{\min(m_i,k_i)} \prod_{j=1}^n p_j^{\max(m_j,k_j)} = \prod_{i=1}^n p_i^{\min(m_i,k_i)+\max(m_i,k_i)} \\
+&= \prod_{i=1}^n p_i^{m_i + k_i} = \prod_{i=1}^n p_i^{m_i} \prod_{j=1}^n p_j^{k_j} = xy
+\end{split}
+\end{equation*}
+With the above we can now say:
+\begin{equation*}
+\text{LCM}(x,y) = \frac{xy}{\text{GCD}(x,y)}
+\end{equation*}
+which is an equivalent definition for the least common multiple using the greatest common divisor. This is really useful in this problem because using the original definition is really expensive compared to this method. To finish off consider the case of $n$ $x$'s instead of just two numbers $x$ and $y$. Without getting into the heavy details just consider the process of getting the GCD or LCM multiple numbers. This can be done by taking two numbers at a time finding their GCD and LCM and using this with the next divisor to find the next GCD and LCM. With this we can keep repeating through the whole list of divisors until the solution is achieved via:
+\begin{equation*}
+\text{LCM}(d_N,d_{N-1},d_{N-2}) = \text{LCM}(d_{N-1},d_{N-2}) \frac{d_N}{\text{GCD}(\text{LCM}(d_{N-1},d_{N-2}),d_N)}
+\end{equation*}
+
+\footnotetext{See the personal comments for problem 3 for a proof of the Fundamental Theorem of Arithmetic}
+
+
+
+
+
+\end{document}
