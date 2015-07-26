@@ -36,12 +36,14 @@ By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that 
 
 \vspace{.3cm}
 \begin{solution*}
-The basic approach to this problem is to generate the prime numbers and get the position we want. Since there is no closed form for the primes, this must be done by brute force. Start at $n=2$ and break down each $n$ into its prime factorization:
+The basic approach to this problem is to generate the prime numbers and get the position we want. Since there is no closed form for the primes, this must be done by brute force. Start at $n=2$ and break down each $n$ into its prime factorization \footnotemark:
 \begin{equation*}
 n = p_1^{m_1} p_2^{m_2} \dots p_k^{m_k}
 \end{equation*}
 Now if the only distinct prime factors of $n$ are 1 and itself, the number is a prime. Add it to the list of primes and keep generating until the desired position is attained.
 \end{solution*}
+
+\footnotetext{See the personal comments for problem 3 for a proof of the Fundamental Theorem of Arithmetic}
 
 
 
