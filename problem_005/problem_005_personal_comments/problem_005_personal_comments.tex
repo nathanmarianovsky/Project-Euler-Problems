@@ -68,7 +68,7 @@ With the above we can now say:
 \begin{equation*}
 \text{LCM}(x,y) = \frac{xy}{\text{GCD}(x,y)}
 \end{equation*}
-which is an equivalent definition for the least common multiple using the greatest common divisor. This is really useful in this problem because using the original definition is really expensive compared to this method. To finish off consider the case of $n$ $x$'s instead of just two numbers $x$ and $y$. Without getting into the heavy details just consider the process of getting the GCD or LCM multiple numbers. This can be done by taking two numbers at a time finding their GCD and LCM and using this with the next divisor to find the next GCD and LCM. With this we can keep repeating through the whole list of divisors until the solution is achieved via:
+which is an equivalent definition for the least common multiple using the greatest common divisor. This is really useful in this problem because using the original definition is really expensive compared to this method. To finish off consider the case of $n$ $x$'s instead of just two numbers $x$ and $y$. Without getting into the heavy details just consider the process of getting the GCD or LCM of multiple numbers. This can be done by taking two numbers at a time, finding their GCD and LCM, and using this with the next divisor to find the next GCD and LCM. With this we can keep repeating through the whole list of divisors until the solution is achieved via:
 \begin{equation*}
 \text{LCM}(d_N,d_{N-1},d_{N-2}) = \text{LCM}(d_{N-1},d_{N-2}) \frac{d_N}{\text{GCD}(\text{LCM}(d_{N-1},d_{N-2}),d_N)}
 \end{equation*}
