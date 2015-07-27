@@ -1,0 +1,61 @@
+\documentclass[12pt, letterpaper, onecolumn, conference, final]{IEEEtran}
+
+\usepackage[margin = .5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{wasysym}
+\usepackage{graphicx}
+\usepackage{mathtools}
+
+\title{Project Euler: Problem 137 Personal Comments}
+\author{Nathan Marianovsky}
+
+\theoremstyle{definition}
+\newtheorem*{problem*}{Problem}
+\newtheorem*{solution*}{Solution}
+
+\theoremstyle{plain}
+
+\renewcommand\thesection{\arabic{section}}
+
+\begin{document}
+
+\maketitle
+
+\section*{\underline{\Large{Closed Form of Fibonacci Generating Function}}}
+\vspace{.3cm}
+\noindent
+In the solution I provided, I made a big jump by saying that:
+\begin{equation*}
+A_F(x) = xF_1 + x^2F_2 + x^3F_3 + \dots = \frac{x}{1 - x - x^2}
+\end{equation*}
+which turns an infinite series into a finite closed form. But so where did this closed form come from? Before moving on lets define the generating function in a proper form:
+\begin{equation*}
+A_F(x) = \sum_{i=1}^\infty x^iF_i
+\end{equation*}
+Now observe what happens when we use the known recurrence relation for the Fibonacci sequence:
+\begin{equation*}
+\begin{split}
+A_F(x) &= \sum_{i=1}^\infty x^iF_i \\
+&= F_0 + xF_1 + \sum_{i=2}^\infty x^iF_i \\
+&= F_0 + xF_1 + \sum_{i=2}^\infty x^i(F_{i-1} + F_{i-2}) \\
+&= F_0 + xF_1 + \sum_{i=2}^\infty x^iF_{i-1} + \sum_{i=2}^\infty x^iF_{i-2} \\
+&= F_0 + xF_1 + \sum_{k=1}^\infty x^{k+1}F_k + \sum_{k=0}^\infty x^{k+2}F_k \\
+&= F_0 + x^2F_0 + xF_1 + x\sum_{k=1}^\infty x^kF_k + x^2\sum_{k=1}^\infty x^kF_k \\
+&= x + xA_F(x) + x^2A_F(x)
+\end{split}
+\end{equation*}
+where I exploited the Fibonacci numbers because placing the $F_0$ in the above calculations is meaningless since it is 0. Now use the above to solve for $A_F(x)$:
+\begin{equation*}
+\begin{split}
+A_F(x) &= x + xA_F(x) + x^2A_F(x)  \\
+A_F(x) (1 - x - x^2) &= x \\
+A_F(x) &= \frac{x}{1 - x - x^2}
+\end{split}
+\end{equation*}
+
+
+
+
+\end{document}

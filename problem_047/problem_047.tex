@@ -51,13 +51,14 @@ Find the first four consecutive integers to have four distinct prime factors. Wh
 
 \vspace{.3cm}
 \begin{solution*}
-The basic approach is to take consecutive integers and break them down into their prime factorization:
+The approach is to take consecutive integers and break them down into their prime factorization \footnotemark:
 \begin{equation*}
 a = p_1^{m_1} p_2^{m_2} \dots p_k^{m_k}
 \end{equation*}
 and count the number of distinct primes. Lets say to generalize that you want to find the first set of $k$ integers that have $k$ distinct prime factors, you check the current $k$ integers to see if they all meet the requirement, if not, move each one over by one and check again. Repeat the checking process until a result has popped up.
 \end{solution*}
 
+\footnotetext{See the personal comments for problem 3 for a proof of the Fundamental Theorem of Arithmetic}
 
 
 \end{document}

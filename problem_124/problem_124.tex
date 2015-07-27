@@ -69,7 +69,7 @@ Let $E(k)$ be the $k$th element in the sorted $n$ column; for example, $E(4) = 8
 
 \vspace{.3cm}
 \begin{solution*}
-It is best to approach this problem by first assuming that the list is of length $N$, though the problem specifically wants $N=100000$. For each value of $n$ in the table produced, we need to find the prime factorization:
+It is best to approach this problem by first assuming that the list is of length $N$, though the problem specifically wants $N=100000$. For each value of $n$ in the table produced, we need the prime factorization \footnotemark:
 \begin{equation*}
 n = p_1^{m_1} p_2^{m_2} \dots p_l^{m_l}
 \end{equation*}
@@ -79,6 +79,8 @@ so that:
 \end{equation*}
 After this it is a simple task of organizing the list based on rad($n$) first, then $n$. 
 \end{solution*}
+
+\footnotetext{See the personal comments for problem 3 for a proof of the Fundamental Theorem of Arithmetic}
 
 
 
