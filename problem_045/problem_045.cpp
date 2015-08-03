@@ -27,7 +27,7 @@ bool is_hexagon(long h) {
 
 //Finds the value that satisfies being a triangle, hexagon, and pentagon number simultaneously
 long find_value(long index) {
-	long current = 2;
+	long current = 1;
 	vector<long> list;
 	while(true) {
 		if(is_triangle(current) && is_hexagon(current) && is_pentagon(current)) {
