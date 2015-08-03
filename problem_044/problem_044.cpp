@@ -22,14 +22,7 @@ class PentagonPair {
 };
 
 
-/*
-Returns a boolean telling whether a value is a Pentagon number or not.
-	Since we know: P_n = (1/2)n(3n-1)
-	Solving for n gives: n = (1/6)(1 +/- sqrt(1 + 24P_n))
-But since we restrict the domain to be the natural numbers, we can also restrict the inverse:
-	n = (1/6)(1 + sqrt(1 + 24P_n))
-Since we know that n is a natural numbers, [(1 + sqrt(1 + 24P_n)) % 6 == 0] if it is a Pentagon number.
-*/
+//Check if a given number is a pentagon number
 bool isPentagon(double N) {
 	double tmp = 1 + sqrt(1 + (24 * N));
 	if(remainder(tmp, 6) == 0) { return true; }

@@ -19,7 +19,7 @@ class Letter {
 };
 
 
-//Check if a given number is a triangle numbers
+//Check if a given number is a triangle number
 bool is_triangle(int t) {
 	double rem = 0;
 	double n = (-1 + sqrt(1 + (8 * t))) / 2;
